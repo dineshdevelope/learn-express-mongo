@@ -1,4 +1,5 @@
 import express from "express";
+import userRouter from "./user.js";
 const router = express.Router();
 
 router.get("/about", (req, res) => {
@@ -9,6 +10,9 @@ router.get("/about/:user", (req, res) => {
   console.log(req.params.user);
   return res.json({ message: `Welcome ${req.params.user}` });
 });
+
+router.use("/users", userRouter);
+
 router.get("*", (req, res) => {
   return res.json({
     success: false,

@@ -1,5 +1,5 @@
 import express from "express";
-import router from "./rounters/index.js";
+import router from "./rounters/main.js";
 
 const server = express();
 const SERVER_PORT = 8888;
